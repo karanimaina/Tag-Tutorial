@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,5 +18,10 @@ private Long id;
 private String title;
 private String description;
 private String published;
+@ManyToMany(fetch = FetchType.LAZY,cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+})
+}
 
 }

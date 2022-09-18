@@ -20,7 +20,10 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-@ManyToMany(fetch = FetchType.LAZY,mappedBy = "tags")
+@ManyToMany(fetch = FetchType.LAZY,mappedBy = "tags",,cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+})
     private Set<Tutorial> tutorials= new HashSet<>();
 
 
