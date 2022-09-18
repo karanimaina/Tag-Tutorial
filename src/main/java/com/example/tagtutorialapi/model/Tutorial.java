@@ -5,10 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -19,11 +18,11 @@ private Long id;
 private String title;
 private String description;
 private String published;
-@ManyToMany(fetch = FetchType.LAZY,cascade = {
-        CascadeType.PERSIST,
-        CascadeType.MERGE
-})
- @JoinTable(name = "tutorial_tags")
+ @JoinTable(name = "tutorial_tags",
+         joinColumns = { @JoinColumn(name = "tutorial_id") },
+         inverseJoinColumns = { @JoinColumn(name = "tag_id") })
+ private Set<Tag> tags = new HashSet<>();
+
 }
 
 }
