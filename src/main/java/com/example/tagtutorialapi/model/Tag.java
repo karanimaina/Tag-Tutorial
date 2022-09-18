@@ -2,6 +2,7 @@ package com.example.tagtutorialapi.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -16,8 +17,7 @@ import java.util.Set;
 @Getter
 @AllArgsConstructor
 @Setter
-
-
+@NoArgsConstructor
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
