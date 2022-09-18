@@ -9,5 +9,6 @@ public class Tutorial {
 private Long id;
 private String title;
 private String description;
+private String published;
 
 }
