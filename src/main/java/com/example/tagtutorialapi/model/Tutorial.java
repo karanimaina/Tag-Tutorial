@@ -16,6 +16,8 @@ import java.util.Set;
 @Entity
 public class Tutorial {
 @Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+
 private Long id;
 private String title;
 private String description;
