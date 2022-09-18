@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Getter
@@ -22,6 +23,7 @@ private String published;
         CascadeType.PERSIST,
         CascadeType.MERGE
 })
+ @JoinTable(name = "tutorial_tags")
 }
 
 }
