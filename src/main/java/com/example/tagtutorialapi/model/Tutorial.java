@@ -13,16 +13,13 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Tutorial {
+
 private Long id;
 private String title;
 private String description;
 private String published;
- @JoinTable(name = "tutorial_tags",
-         joinColumns = { @JoinColumn(name = "tutorial_id") },
-         inverseJoinColumns = { @JoinColumn(name = "tag_id") })
+ @JoinTable(name = "tutorial_tags", joinColumns = { @JoinColumn(name = "tutorial_id") }, inverseJoinColumns = { @JoinColumn(name = "tag_id") })
  private Set<Tag> tags = new HashSet<>();
-
-}
-
 }
