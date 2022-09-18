@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 public class Tutorial {
-
+@Id
 private Long id;
 private String title;
 private String description;
