@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TagTutorialApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TagTutorialApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TagTutorialApiApplication.class, args);
+    }
 
 }
