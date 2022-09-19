@@ -39,14 +39,16 @@ public class TagTutorialController {
        return  new ResponseEntity<>(tag,HttpStatus.OK);
   }
 //  public ResponseEntity<List<Tag>>
-    public ResponseEntity<List<Tag>>getAllTagsByTutorialId(@PathVariable("tutorial_id")Long tutoriald ){
+    @GetMapping("tutorials/{tutorials_id}/tags")
+    public ResponseEntity<List<Tag>>getAllTagsByTutorialId(@PathVariable("tutorials_id")Long tutoriald ){
        if (!tutorialRepository.existsById(tutoriald)){
            throw new ResourceNotFoundException("Not foundTutorial with id" + tutoriald);
        }
        List<Tag>tags  = tagRepository.findTagByTutorialsId(tutoriald);
         return new ResponseEntity<>(tags, HttpStatus.OK);
     }
-    public ResponseEntity<List<Tutorial>>getAllTutorialsByTagsId(@PathVariable("tag") Long tagId){
+    @GetMapping("tags/{tagId}/tutorials")
+    public ResponseEntity<List<Tutorial>>getAllTutorialsByTagsId(@PathVariable("tagId") Long tagId){
        if (!tagRepository.existsById(tagId)){
            throw new ResourceNotFoundException("Not found tag  with id "+ tagId);
        }
