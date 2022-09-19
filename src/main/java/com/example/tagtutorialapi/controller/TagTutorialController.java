@@ -23,6 +23,7 @@ import java.util.List;
 public class TagTutorialController {
     private final TagRepository tagRepository;
     private final TutorialRepository tutorialRepository;
+
    public ResponseEntity<List<Tag>>getAllTags(){
         List<Tag>tags = new ArrayList<>();
         tagRepository.findAll().forEach(tags::add);
