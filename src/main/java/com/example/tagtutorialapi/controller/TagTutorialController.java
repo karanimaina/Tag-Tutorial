@@ -88,6 +88,7 @@ public class TagTutorialController {
        return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
+    @DeleteMapping("/tag/{id}")
     public ResponseEntity<HttpStatus>deleteTag(@PathVariable("id")Long tagId){
        tagRepository.deleteById(tagId);
        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
