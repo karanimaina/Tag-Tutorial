@@ -25,7 +25,9 @@ public class TagTutorialController {
    public ResponseEntity<List<Tag>>getAllTags(){
         List<Tag>tags = new ArrayList<>();
         tagRepository.findAll().forEach(tags::add);
+
         if (tags.isEmpty()){
+
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(tags,HttpStatus.OK);
