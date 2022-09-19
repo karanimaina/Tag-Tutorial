@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class TagTutorialController {
+public class TagController {
     private final TagRepository tagRepository;
     private final TutorialRepository tutorialRepository;
 
