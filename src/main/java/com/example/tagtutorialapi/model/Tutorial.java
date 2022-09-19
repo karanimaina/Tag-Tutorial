@@ -31,4 +31,12 @@ public void  addTag(Tag tag){
  this.tags.add(tag);
  tag.getTutorials().add(this);
 }
+public void removeTag(long tagId){
+ Tag tag = this.tags.stream().filter(t ->t.getId() ==tagId)
+         .findFirst().orElse(null);
+  if (tag !=null){
+   this.tags.remove(tag);
+   tag.getTutorials().remove(this);
+  }
+}
 }
