@@ -74,6 +74,7 @@ public class TagTutorialController {
        }).orElseThrow(()->new ResourceNotFoundException("not found with the giveb id"));
        return  new ResponseEntity<>(tag, HttpStatus.CREATED);
     }
+    @PutMapping("tags/{id}")
     public ResponseEntity<Tag>updateTag(@PathVariable("id")Long id,@RequestBody Tag tagRequest){
        Tag tag  = tagRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("tutorial does not Exist"));
        tag.setName(tagRequest.getName());
