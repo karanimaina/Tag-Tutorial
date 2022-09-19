@@ -78,8 +78,6 @@ public class TutorialController {
         if (tutorials.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-
-
         return new ResponseEntity<>(tutorials, HttpStatus.OK);
     }
 }
