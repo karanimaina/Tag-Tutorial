@@ -65,6 +65,7 @@ public class TagTutorialController {
                tutorial.addTag(_tag);
                tutorialRepository.save(tutorial);
                return _tag;
+
            }
            tutorial.addTag(tagRequest);
            return tagRepository.save(tagRequest);
