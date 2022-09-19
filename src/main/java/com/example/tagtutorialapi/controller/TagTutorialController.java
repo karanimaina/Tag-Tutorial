@@ -55,6 +55,7 @@ public class TagTutorialController {
        List<Tutorial>tutorials  = tutorialRepository.findTutorialByTagsId(tagId);
        return new ResponseEntity<>(tutorials,HttpStatus.OK);
     }
+    @PostMapping()
     public ResponseEntity<Tag>addTag(@PathVariable("tutorialId")Long tutorialId,@RequestBody Tag tagRequest){
        Tag tag  = tutorialRepository.findById(tutorialId).map(tutorial -> {
            long tagId = tagRequest.getId();
