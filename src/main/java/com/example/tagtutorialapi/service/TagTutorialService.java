@@ -40,6 +40,6 @@ public class TagTutorialService {
        }
        List<Tag>tags  = tagRepository.findTagByTutorialsId(tutoriald);
         return new ResponseEntity<>(tags, HttpStatus.OK);
-
     }
+
 }
