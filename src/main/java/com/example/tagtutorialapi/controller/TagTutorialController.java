@@ -80,11 +80,13 @@ public class TagTutorialController {
        tag.setName(tagRequest.getName());
        return  new ResponseEntity<>(tagRepository.save(tag), HttpStatus.OK);
     }
-    public ResponseEntity<HttpStatus>deleteTagFromTutorial(@PathVariable("tutorialId")Long tutorialId, @PathVariable("tagId")Long tagId){
+    @DeleteMapping("/tutorials/{tutorialsId}/{tagId}")
+    public ResponseEntity<HttpStatus>deleteTagFromTutorial(@PathVariable("tutorialsId")Long tutorialId, @PathVariable("tagId")Long tagId){
        Tutorial tutorial = tutorialRepository.findById(tutorialId).orElseThrow(()->new ResourceNotFoundException("tutorial does not Exist"));
        tutorial.removeTag(tagId);
        tutorialRepository.save(tutorial);
        return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
     }
     public ResponseEntity<HttpStatus>deleteTag(@PathVariable("id")Long tagId){
        tagRepository.deleteById(tagId);
