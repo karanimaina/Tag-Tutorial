@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class TagTutorialService {
+public class TagTutorialController {
     private final TagRepository tagRepository;
     private final TutorialRepository tutorialRepository;
    public ResponseEntity<List<Tag>>getAllTags(){
