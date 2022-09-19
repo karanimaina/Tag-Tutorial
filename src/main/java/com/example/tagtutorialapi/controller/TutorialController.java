@@ -67,6 +67,7 @@ public class TutorialController {
     public ResponseEntity<HttpStatus> deleteAllTutorials() {
         tutorialRepository.deleteAll();
 
+
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
