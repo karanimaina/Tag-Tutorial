@@ -34,6 +34,14 @@ public class TutorialController {
         Tutorial tutorial = tutorialRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Not found tutorial does not exist"));
         return  new ResponseEntity<>(tutorial,HttpStatus.OK);
     }
-//    @PostMapping("/tutorials")
-//    public ResponseEntity<Tutorial>createTut
+    @PostMapping("/tutorials")
+    public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
+        Tutorial _tutorial = tutorialRepository.save(Tutorial.builder()
+                .description(tutorial.getDescription())
+                .title(tutorial.getTitle())
+                        .published(true)
+                .build());
+        return new ResponseEntity<>(_tutorial, HttpStatus.CREATED);
+    }
+    @
 }
